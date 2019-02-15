@@ -1,25 +1,30 @@
 package com.browserstack.demos;
 
-import java.io.File;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import org.apache.commons.io.FileUtils;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BrowserStack {
 
     public static void main(String args[]) throws MalformedURLException, InterruptedException {
-        FirefoxOptions options = new FirefoxOptions();
+        DesiredCapabilities bstackOptions = new DesiredCapabilities();
+        bstackOptions.setCapability("os", "Windows");
+        bstackOptions.setCapability("osVersion", "7");
+        bstackOptions.setCapability("sessionName", "session 1");
+        bstackOptions.setCapability("buildName", "com.browserstack.demos");
+        bstackOptions.setCapability("projectName", "My Awesome App");
+        bstackOptions.setCapability("debug", true);
+        bstackOptions.setCapability("seleniumVersion", "3.12.0");
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserstack.use_w3c", true);
+        capabilities.setCapability("browserstack.browserName", "Chrome");
+        capabilities.setCapability("bstack:options", bstackOptions);
 
         String username = System.getenv("BROWSERSTACK_USERNAME");
         if (username == null) {
@@ -32,12 +37,12 @@ public class BrowserStack {
         }
 
         WebDriver driver = new RemoteWebDriver(
-                new URL("http://" + username + ":" + accessKey + "@hub.browserstack.com/wd/hub"), options);
+                new URL("http://" + username + ":" + accessKey + "@hub.browserstack.com/wd/hub"), capabilities);
         driver.get("http://www.google.com");
         WebElement element = driver.findElement(By.name("q"));
         element.sendKeys("BrowserStack");
         element.submit();
         System.out.println("Title: " + driver.getTitle());
-        driver.close();
+        driver.quit();
     }
 }
