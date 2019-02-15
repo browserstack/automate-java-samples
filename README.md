@@ -1,12 +1,13 @@
-Automate Java Samples
----------------------
+# Automate Java Samples
 
 This repository contains code samples from http://www.browserstack.com/automate/java. Please feel free to clone the repo and use the example code.
 
+## Usage
 
-Do remember to switch the USERNAME and ACCESS_KEY with your own browserstack credentials.
+1. Setup `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` environment variables with browserstack credentials or directly update thses strings in Browserstack.java
+2. Run using `mvn compile exec:java`
 
-For frameworks integration with BrowserStack, refer to their individual repositories - 
+#### For test frameworks integration with BrowserStack, refer to these sample repositories - 
 
-- [JUnit](https://github.com/browserstack/junit-browserstack)
-- [TestNg](https://github.com/browserstack/testng-browserstack)
+1. [JUnit](https://github.com/browserstack/junit-browserstack)
+2. [TestNg](https://github.com/browserstack/testng-browserstack)
