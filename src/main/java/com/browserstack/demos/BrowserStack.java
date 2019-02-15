@@ -1,4 +1,4 @@
-package bs;
+package com.browserstack.demos;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,21 +14,30 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BrowserStack {
 
     public static void main(String args[]) throws MalformedURLException, InterruptedException {
-        DesiredCapabilities capability = DesiredCapabilities.firefox();
+        FirefoxOptions options = new FirefoxOptions();
+
+        String username = System.getenv("BROWSERSTACK_USERNAME");
+        if (username == null) {
+            username = "BROWSERSTACK_USERNAME";
+        }
+
+        String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+        if (accessKey == null) {
+            accessKey = "BROWSERSTACK_ACCESS_KEY";
+        }
+
         WebDriver driver = new RemoteWebDriver(
-            new URL("http://USERNAME:ACCESS_KEY@hub.browserstack.com/wd/hub"),
-            capability
-            );
+                new URL("http://" + username + ":" + accessKey + "@hub.browserstack.com/wd/hub"), options);
         driver.get("http://www.google.com");
-        System.out.println("Page title is: " + driver.getTitle());
         WebElement element = driver.findElement(By.name("q"));
         element.sendKeys("BrowserStack");
         element.submit();
-        System.out.println("And the Title is: " + driver.getTitle());
+        System.out.println("Title: " + driver.getTitle());
         driver.quit();
     }
 }
