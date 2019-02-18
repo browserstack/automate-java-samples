@@ -20,11 +20,6 @@
             <artifactId>selenium-java</artifactId>
             <version>3.14.0</version>
         </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.4</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -32,6 +27,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
                 <configuration>
                     <cleanupDaemonThreads>false</cleanupDaemonThreads>
                 </configuration>

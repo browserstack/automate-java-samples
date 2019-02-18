@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BrowserStack {
 
-    public static void main(String args[]) throws MalformedURLException, InterruptedException {
+    public static void main(String args[]) throws MalformedURLException {
         DesiredCapabilities bstackOptions = new DesiredCapabilities();
         bstackOptions.setCapability("os", "Windows");
         bstackOptions.setCapability("osVersion", "7");
