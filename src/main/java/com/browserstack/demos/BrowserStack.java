@@ -2,16 +2,17 @@ package com.browserstack.demos;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BrowserStack {
 
-    public static void main(String args[]) throws MalformedURLException, InterruptedException {
-        FirefoxOptions options = new FirefoxOptions();
+    public static void main(String args[]) throws MalformedURLException {
+        ChromeOptions options = new ChromeOptions();
 
         String username = System.getenv("BROWSERSTACK_USERNAME");
         if (username == null) {

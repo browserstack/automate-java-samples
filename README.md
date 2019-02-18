@@ -5,7 +5,7 @@ This repository contains code samples from http://www.browserstack.com/automate/
 ## Usage
 
 1. Setup `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` environment variables with browserstack credentials or directly update thses strings in Browserstack.java
-2. Run using `mvn compile exec:java`
+2. Run using `mvn clean compile exec:java`
 
 #### For test frameworks integration with BrowserStack, refer to these sample repositories - 
 
