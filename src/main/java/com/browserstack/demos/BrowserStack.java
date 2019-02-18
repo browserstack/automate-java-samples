@@ -6,7 +6,7 @@ import java.net.URL;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BrowserStack {
@@ -16,7 +16,7 @@ public class BrowserStack {
         bstackOptions.setCapability("os", "Windows");
         bstackOptions.setCapability("osVersion", "7");
         bstackOptions.setCapability("sessionName", "session 1");
-        bstackOptions.setCapability("buildName", "com.browserstack.demos");
+        bstackOptions.setCapability("buildName", "Demos");
         bstackOptions.setCapability("projectName", "My Awesome App");
         bstackOptions.setCapability("debug", true);
         bstackOptions.setCapability("seleniumVersion", "3.12.0");
