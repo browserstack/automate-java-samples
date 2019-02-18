@@ -2,6 +2,8 @@
 
 This repository contains code samples from http://www.browserstack.com/automate/java. Please feel free to clone the repo and use the example code.
 
+This branch is for `Selenium 3` samples, for `Selenium 4` please checkout branch `selenium-4`.
+
 ## Usage
 
 1. Setup `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` environment variables with browserstack credentials or directly update thses strings in Browserstack.java
