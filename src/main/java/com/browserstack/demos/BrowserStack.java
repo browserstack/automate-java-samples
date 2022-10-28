@@ -15,8 +15,9 @@ public class BrowserStack {
         DesiredCapabilities bstackOptions = new DesiredCapabilities();
         bstackOptions.setCapability("os", "Windows");
         bstackOptions.setCapability("osVersion", "7");
-        bstackOptions.setCapability("sessionName", "session 1");
-        bstackOptions.setCapability("buildName", "Demos");
+        bstackOptions.setCapability("sessionName", "BStack automate-java");
+        bstackOptions.setCapability("buildName", "browserstack-build-1");
+        bstackOptions.setCapability("source", "automate-java:sample-selenium-4:v1.0");
         bstackOptions.setCapability("projectName", "My Awesome App");
         bstackOptions.setCapability("debug", true);
         bstackOptions.setCapability("seleniumVersion", "3.12.0");
