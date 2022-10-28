@@ -13,6 +13,9 @@ public class BrowserStack {
 
     public static void main(String args[]) throws MalformedURLException {
         ChromeOptions options = new ChromeOptions();
+        options.setCapability("build", "browserstack-build-1");
+        options.setCapability("name", "BStack automate-java");
+        options.setCapability("browserstack.source", "automate-java:sample-master:v1.0");
 
         String username = System.getenv("BROWSERSTACK_USERNAME");
         if (username == null) {
