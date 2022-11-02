@@ -3,7 +3,7 @@
 This repository contains code samples from http://www.browserstack.com/automate/java. 
 Please feel free to clone the repo and use the example code.
 
-Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol** please checkout [selenium-4](https://github.com/browserstack/automate-java-samples/tree/selenium-4) branch
+Master branch contains **Selenium 4** samples, for **Selenium 3** please checkout [selenium-3](https://github.com/browserstack/automate-java-samples/tree/selenium-3) branch
 
 ## Usage
 

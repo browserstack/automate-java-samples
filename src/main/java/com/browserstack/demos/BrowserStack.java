@@ -6,13 +6,13 @@ import java.net.URL;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BrowserStack {
 
     public static void main(String args[]) throws MalformedURLException {
-        ChromeOptions options = new ChromeOptions();
+        MutableCapabilities options = new MutableCapabilities();
         options.setCapability("build", "browserstack-build-1");
         options.setCapability("name", "BStack automate-java");
         options.setCapability("browserstack.source", "automate-java:sample-master:v1.0");
