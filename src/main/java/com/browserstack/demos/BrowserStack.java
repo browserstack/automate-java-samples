@@ -7,7 +7,7 @@ import java.util.HashMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BrowserStack {
@@ -22,7 +22,7 @@ public class BrowserStack {
         bstackOptions.put("projectName", "My Awesome App");
         bstackOptions.put("debug", true);
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+        MutableCapabilities capabilities = new MutableCapabilities();
         capabilities.setCapability("browserName", "Chrome");
         capabilities.setCapability("bstack:options", bstackOptions);
 
