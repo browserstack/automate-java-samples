@@ -2,27 +2,28 @@ package com.browserstack.demos;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BrowserStack {
 
     public static void main(String args[]) throws MalformedURLException {
-        DesiredCapabilities bstackOptions = new DesiredCapabilities();
-        bstackOptions.setCapability("os", "Windows");
-        bstackOptions.setCapability("osVersion", "7");
-        bstackOptions.setCapability("sessionName", "BStack automate-java");
-        bstackOptions.setCapability("buildName", "browserstack-build-1");
-        bstackOptions.setCapability("source", "automate-java:sample-selenium-4:v1.0");
-        bstackOptions.setCapability("projectName", "My Awesome App");
-        bstackOptions.setCapability("debug", true);
-        bstackOptions.setCapability("seleniumVersion", "3.12.0");
+        HashMap<String, Object> bstackOptions = new HashMap<String, Object>();
+        bstackOptions.put("os", "Windows");
+        bstackOptions.put("osVersion", "7");
+        bstackOptions.put("sessionName", "BStack automate-java");
+        bstackOptions.put("buildName", "browserstack-build-1");
+        bstackOptions.put("source", "automate-java:sample-selenium-4:v1.0");
+        bstackOptions.put("projectName", "My Awesome App");
+        bstackOptions.put("debug", true);
+        bstackOptions.put("seleniumVersion", "3.12.0");
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+        MutableCapabilities capabilities = new MutableCapabilities();
         capabilities.setCapability("browserstack.use_w3c", true);
         capabilities.setCapability("browserstack.browserName", "Chrome");
         capabilities.setCapability("bstack:options", bstackOptions);
