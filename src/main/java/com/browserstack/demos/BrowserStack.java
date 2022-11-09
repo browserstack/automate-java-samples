@@ -13,14 +13,14 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class BrowserStack {
 
     public static void main(String args[]) throws MalformedURLException {
-        HashMap<String, String> bstackOptions = new HashMap<String, String>();
+        HashMap<String, Object> bstackOptions = new HashMap<String, Object>();
         bstackOptions.put("os", "Windows");
         bstackOptions.put("osVersion", "7");
         bstackOptions.put("sessionName", "BStack automate-java");
         bstackOptions.put("buildName", "browserstack-build-1");
         bstackOptions.put("source", "automate-java:sample-master:v1.0");
         bstackOptions.put("projectName", "My Awesome App");
-        bstackOptions.put("debug", "true");
+        bstackOptions.put("debug", true);
 
         MutableCapabilities capabilities = new MutableCapabilities();
         capabilities.setCapability("browserName", "Chrome");
