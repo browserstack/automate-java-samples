@@ -20,7 +20,7 @@ public class BrowserStack {
         bstackOptions.put("buildName", "browserstack-build-1");
         bstackOptions.put("source", "automate-java:sample-master:v1.0");
         bstackOptions.put("projectName", "My Awesome App");
-        bstackOptions.put("debug", true);
+        bstackOptions.put("debug", "true");
 
         MutableCapabilities capabilities = new MutableCapabilities();
         capabilities.setCapability("browserName", "Chrome");
